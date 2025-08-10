@@ -1,0 +1,18 @@
+[Unit]
+Description=Dovecot container
+
+[Container]
+ContainerName=dovecot
+Image=docker.io/dovecot/dovecot:2.4.1
+AutoUpdate=registry
+UserNS=keep-id:uid=1000,gid=1000
+PublishPort=6993:31993
+PublishPort=6143:31143
+Volume=%h/volumes/dovecot_config/dovecot.conf:/etc/dovecot/dovecot.conf
+Volume=%h/volumes/dovecot_config/conf.d:/etc/dovecot/conf.d:ro
+Volume=%h/volumes/mbsync_data:/srv/vmail
+
+[Install]
+WantedBy=default.target
+
+

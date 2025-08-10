@@ -1,0 +1,24 @@
+[Unit]
+Description=Roundcube container
+
+[Container]
+ContainerName=roundcube
+Image=docker.io/roundcube/roundcubemail:latest
+AutoUpdate=registry
+UserNS=keep-id:uid=1500,gid=1500
+Environment=ROUNDCUBEMAIL_DB_TYPE=sqlite
+Environment=ROUNDCUBEMAIL_SKIN=elastic
+Environment=ROUNDCUBEMAIL_DEFAULT_HOST=host.containers.internal
+Environment=ROUNDCUBEMAIL_DEFAULT_PORT=6143
+Environment=ROUNDCUBEMAIL_SMTP_SERVER=tls://mail.example.com
+Environment=ROUNDCUBEMAIL_SMTP_PORT=587
+PublishPort=6080:8080
+Volume=%h/volumes/roundcube/www:/var/www/html
+Volume=%h/volumes/roundcube/db:/var/roundcube/db
+Volume=%h/volumes/roundcube/config:/var/roundcube/config
+Volume=%h/volumes/roundcube/apache/ports.conf:/etc/apache2/ports.conf
+
+[Install]
+WantedBy=default.target
+
+

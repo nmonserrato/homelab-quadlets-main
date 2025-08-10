@@ -1,0 +1,16 @@
+[Unit]
+Description=Vaultwarden container
+
+[Container]
+ContainerName=vaultwarden
+Image=docker.io/vaultwarden/server:latest
+AutoUpdate=registry
+User=0
+Secret=vaultwarden-domain,type=env,target=DOMAIN
+PublishPort=48880:80
+Volume=%h/volumes/vaultwarden_data:/data
+
+[Install]
+WantedBy=default.target
+
+

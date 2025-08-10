@@ -1,0 +1,15 @@
+[Unit]
+Description=DDClient container
+
+[Container]
+ContainerName=ddclient
+Image=lscr.io/linuxserver/ddclient:latest
+AutoUpdate=registry
+UserNS=keep-id
+Environment=TZ=Etc/UTC
+Volume=%h/volumes/ddclient_config:/config
+
+[Install]
+WantedBy=default.target
+
+

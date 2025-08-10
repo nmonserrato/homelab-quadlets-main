@@ -1,0 +1,24 @@
+[Unit]
+Description=Jellyfin container
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=jellyfin
+Image=docker.io/jellyfin/jellyfin:latest
+AutoUpdate=registry
+UserNS=keep-id
+GroupAdd=keep-groups
+PublishPort=8096:8096
+PublishPort=8920:8920
+PublishPort=7359:7359/udp
+PublishPort=1900:1900/udp
+Volume=%h/volumes/jellyfin_config:/config
+Volume=%h/volumes/jellyfin_cache:/cache
+Volume=/mnt/nas/media:/media
+AddDevice=/dev/dri/renderD128:/dev/dri/renderD128
+
+[Install]
+WantedBy=default.target
+
+

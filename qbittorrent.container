@@ -1,0 +1,19 @@
+[Unit]
+Description=QBitTorrent container
+
+[Container]
+ContainerName=qbittorrent
+Image=lscr.io/linuxserver/qbittorrent:latest
+AutoUpdate=registry
+Network=gluetun.container
+PodmanArgs=--runtime crun
+GroupAdd=keep-groups
+Environment=TZ=Europe/Berlin
+Environment=WEBUI_PORT=10095
+Volume=%h/volumes/qbittorrent_config:/config
+Volume=/mnt/nas/media/Downloads:/downloads
+
+[Install]
+WantedBy=default.target
+
+

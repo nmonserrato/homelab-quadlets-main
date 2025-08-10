@@ -1,0 +1,17 @@
+[Unit]
+Description=Homepage container
+
+[Container]
+ContainerName=homepage
+Image=ghcr.io/gethomepage/homepage:latest
+AutoUpdate=registry
+User=0
+Environment=PUID=1500
+Environment=PGID=1500
+Secret=homepage-allowed_hosts,type=env,target=HOMEPAGE_ALLOWED_HOSTS
+PublishPort=3000:3000
+Volume=%h/volumes/homepage_config:/app/config
+
+
+[Install]
+WantedBy=default.target

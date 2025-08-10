@@ -1,0 +1,34 @@
+[Unit]
+Description=Nebula-Sync container
+
+[Container]
+ContainerName=nebulasync
+Image=ghcr.io/lovelaze/nebula-sync:latest
+AutoUpdate=registry
+UserNS=keep-id
+Secret=nebulasync-primary,type=env,target=PRIMARY
+Secret=nebulasync-replicas,type=env,target=REPLICAS
+Environment=FULL_SYNC=false
+Environment=RUN_GRAVITY=false
+Environment=CRON="0 */6 * * *"
+Environment=TZ="Europe/Madrid"
+Environment=SYNC_CONFIG_DNS=true
+Environment=SYNC_CONFIG_DHCP=true
+Environment=SYNC_CONFIG_NTP=false
+Environment=SYNC_CONFIG_RESOLVE=true
+Environment=SYNC_CONFIG_DATABASE=true
+Environment=SYNC_CONFIG_MISC=false
+Environment=SYNC_CONFIG_DEBUG=false
+Environment=SYNC_GRAVITY_DHCP_LEASES=true
+Environment=SYNC_GRAVITY_GROUP=true
+Environment=SYNC_GRAVITY_AD_LIST=true
+Environment=SYNC_GRAVITY_AD_LIST_BY_GROUP=true
+Environment=SYNC_GRAVITY_DOMAIN_LIST=true
+Environment=SYNC_GRAVITY_DOMAIN_LIST_BY_GROUP=true
+Environment=SYNC_GRAVITY_CLIENT=true
+Environment=SYNC_GRAVITY_CLIENT_BY_GROUP=true
+
+[Install]
+WantedBy=default.target
+
+

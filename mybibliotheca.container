@@ -1,0 +1,16 @@
+[Unit]
+Description=MyBibliotheca container
+
+[Container]
+ContainerName=mybibliotheca
+Image=docker.io/pickles4evaaaa/mybibliotheca:1.1.1
+AutoUpdate=registry
+UserNS=keep-id
+Environment=TIMEZONE="Europe/Madrid"
+Environment=WORKERS=6
+PublishPort=5054:5054
+Volume=%h/volumes/mybibliotheca_data:/app/data
+
+[Install]
+WantedBy=default.target
+

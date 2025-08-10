@@ -1,0 +1,18 @@
+[Unit]
+Description=Ntfy container
+
+[Container]
+ContainerName=ntfy
+Image=docker.io/binwiederhier/ntfy:latest
+AutoUpdate=registry
+Exec=serve
+UserNS=keep-id
+Environment=TZ=UTC
+PublishPort=1280:1280
+PublishPort=9025:9025
+Volume=%h/volumes/ntfy_cache:/var/cache/ntfy
+Volume=%h/volumes/ntfy_config:/etc/ntfy
+
+[Install]
+WantedBy=default.target
+
