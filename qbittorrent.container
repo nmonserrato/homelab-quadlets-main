@@ -4,6 +4,7 @@ Description=QBitTorrent container
 [Container]
 ContainerName=qbittorrent
 Image=lscr.io/linuxserver/qbittorrent:latest
+UserNS=keep-id:uid=1500,gid=1500
 AutoUpdate=registry
 Network=gluetun.container
 PodmanArgs=--runtime crun
