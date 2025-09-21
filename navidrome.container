@@ -3,7 +3,7 @@ Description=Navidrome container
 
 [Container]
 ContainerName=navidrome
-Image=docker.io/deluan/navidrome:latest
+Image=registry-1.docker.io/deluan/navidrome:latest
 AutoUpdate=registry
 UserNS=keep-id
 Environment=ND_SCANSCHEDULE:1h
@@ -12,7 +12,7 @@ Environment=ND_SESSIONTIMEOUT:24h
 Environment=ND_BASEURL:""
 PublishPort=4533:4533
 Volume=%h/volumes/navidrome_data:/data
-Volume=/mnt/nas/music:/music:ro
+Volume=/mnt/nas/media/Music:/music:ro
 
 [Install]
 WantedBy=default.target

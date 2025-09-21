@@ -1,0 +1,20 @@
+[Unit]
+Description=Immich Keydb
+
+[Container]
+Pod=immich.pod
+ContainerName=immich-valkey
+AutoUpdate=registry
+HealthCmd=redis-cli ping || exit 1
+HealthInterval=1m
+HealthOnFailure=kill
+Image=registry-1.docker.io/valkey/valkey:latest
+Label=registry
+Timezone=Europe/Madrid
+Volume=%h/volumes/immich_valkey:/data:z
+
+[Service]
+Restart=always
+
+[Service]
+Restart=always

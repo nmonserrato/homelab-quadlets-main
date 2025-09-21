@@ -1,0 +1,15 @@
+[Unit]
+Description=Immich Machine Learning	
+
+[Container]
+AddDevice=/dev/dri:/dev/dri
+Pod=immich.pod
+ContainerName=immich-machine-learning
+Image=ghcr.io/immich-app/immich-machine-learning:release
+AutoUpdate=registry
+Volume=%h/volumes/immich_model_cache:/cache:z
+Volume=/etc/localtime:/etc/localtime:ro
+Unmask=/dev/dri:/dev/dri
+
+[Service]
+Restart=always

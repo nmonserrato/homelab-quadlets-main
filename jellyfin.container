@@ -5,7 +5,7 @@ After=network-online.target
 
 [Container]
 ContainerName=jellyfin
-Image=docker.io/jellyfin/jellyfin:latest
+Image=registry-1.docker.io/jellyfin/jellyfin:latest
 AutoUpdate=registry
 UserNS=keep-id
 GroupAdd=keep-groups

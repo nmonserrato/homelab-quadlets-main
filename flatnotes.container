@@ -3,7 +3,7 @@ Description=Flatnotes container
 
 [Container]
 ContainerName=flatnotes
-Image=docker.io/dullage/flatnotes:latest
+Image=registry-1.docker.io/dullage/flatnotes:latest
 AutoUpdate=registry
 UserNS=keep-id:uid=1500,gid=1500
 Environment=PUID=1500

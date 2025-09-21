@@ -3,7 +3,7 @@ Description=Gluetun container
 
 [Container]
 ContainerName=gluetun
-Image=docker.io/qmcgaw/gluetun
+Image=registry-1.docker.io/qmcgaw/gluetun
 AutoUpdate=registry
 AddCapability=NET_ADMIN
 AddDevice=/dev/net/tun

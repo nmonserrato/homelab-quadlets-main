@@ -3,7 +3,7 @@ Description=Syncthing container
 
 [Container]
 ContainerName=syncthing
-Image=docker.io/syncthing/syncthing:latest
+Image=registry-1.docker.io/syncthing/syncthing:latest
 AutoUpdate=registry
 HostName=syncthing
 UserNS=keep-id:uid=1500,gid=1500

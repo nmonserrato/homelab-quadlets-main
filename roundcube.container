@@ -3,7 +3,7 @@ Description=Roundcube container
 
 [Container]
 ContainerName=roundcube
-Image=docker.io/roundcube/roundcubemail:latest
+Image=registry-1.docker.io/roundcube/roundcubemail:latest
 AutoUpdate=registry
 UserNS=keep-id:uid=1500,gid=1500
 Environment=ROUNDCUBEMAIL_DB_TYPE=sqlite

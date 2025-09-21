@@ -3,7 +3,7 @@ Description=Ntfy container
 
 [Container]
 ContainerName=ntfy
-Image=docker.io/binwiederhier/ntfy:latest
+Image=registry-1.docker.io/binwiederhier/ntfy:latest
 AutoUpdate=registry
 Exec=serve
 UserNS=keep-id

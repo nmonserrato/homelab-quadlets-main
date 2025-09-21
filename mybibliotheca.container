@@ -3,7 +3,7 @@ Description=MyBibliotheca container
 
 [Container]
 ContainerName=mybibliotheca
-Image=docker.io/pickles4evaaaa/mybibliotheca:1.1.1
+Image=registry-1.docker.io/pickles4evaaaa/mybibliotheca:1.1.1
 AutoUpdate=registry
 UserNS=keep-id
 Environment=TIMEZONE="Europe/Madrid"

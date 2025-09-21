@@ -3,7 +3,7 @@ Description=Vaultwarden container
 
 [Container]
 ContainerName=vaultwarden
-Image=docker.io/vaultwarden/server:latest
+Image=registry-1.docker.io/vaultwarden/server:latest
 AutoUpdate=registry
 User=0
 Secret=vaultwarden-domain,type=env,target=DOMAIN

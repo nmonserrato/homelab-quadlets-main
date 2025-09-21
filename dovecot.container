@@ -3,7 +3,7 @@ Description=Dovecot container
 
 [Container]
 ContainerName=dovecot
-Image=docker.io/dovecot/dovecot:2.4.1
+Image=registry-1.docker.io/dovecot/dovecot:2.4.1
 AutoUpdate=registry
 UserNS=keep-id:uid=1000,gid=1000
 PublishPort=6993:31993
