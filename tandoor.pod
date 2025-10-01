@@ -1,0 +1,13 @@
+[Unit]
+Description=Tandoor pod
+Wants=network-online.target
+After=network-online.target
+
+[Pod]
+PodName=tandoor	
+ServiceName=tandoor
+PublishPort=8111:8080
+
+[Install]
+WantedBy=default.target
+

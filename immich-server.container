@@ -6,6 +6,7 @@ Requires=immich-database.service
 Pod=immich.pod
 ContainerName=immich-server
 Image=ghcr.io/immich-app/immich-server:release
+UserNS=keep-id:uid=1500,gid=1500
 AutoUpdate=registry
 Volume=%h/volumes/immich_upload:/data
 Volume=/etc/localtime:/etc/localtime:ro

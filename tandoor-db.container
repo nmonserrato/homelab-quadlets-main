@@ -1,0 +1,14 @@
+[Unit]
+Description=Tandoor DB container
+
+[Container]
+Pod=tandoor.pod
+ContainerName=tandoor-db
+UserNS=keep-id:uid=1500,gid=1500
+Image=docker.io/postgres:16-alpine
+AutoUpdate=registry
+Environment=POSTGRES_DB=tandoor
+Environment=POSTGRES_USER=tandoor
+Secret=tandoor-db-password,type=env,target=POSTGRES_PASSWORD
+Volume=%h/volumes/tandoor_db:/var/lib/postgresql/data
+

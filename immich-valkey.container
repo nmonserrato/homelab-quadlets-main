@@ -4,11 +4,12 @@ Description=Immich Keydb
 [Container]
 Pod=immich.pod
 ContainerName=immich-valkey
+Image=registry-1.docker.io/valkey/valkey:latest
 AutoUpdate=registry
+UserNS=keep-id:uid=1500,gid=1500
 HealthCmd=redis-cli ping || exit 1
 HealthInterval=1m
 HealthOnFailure=kill
-Image=registry-1.docker.io/valkey/valkey:latest
 Label=registry
 Timezone=Europe/Madrid
 Volume=%h/volumes/immich_valkey:/data:z

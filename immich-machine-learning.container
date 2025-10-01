@@ -5,6 +5,7 @@ Description=Immich Machine Learning
 AddDevice=/dev/dri:/dev/dri
 Pod=immich.pod
 ContainerName=immich-machine-learning
+UserNS=keep-id:uid=1500,gid=1500
 Image=ghcr.io/immich-app/immich-machine-learning:release
 AutoUpdate=registry
 Volume=%h/volumes/immich_model_cache:/cache:z

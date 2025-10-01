@@ -6,6 +6,8 @@ Requires=immich-valkey.service
 Pod=immich.pod
 ContainerName=immich-database
 Image=ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:8d292bdb796aa58bbbaa47fe971c8516f6f57d6a47e7172e62754feb6ed4e7b0
+UserNS=keep-id:uid=1500,gid=1500
+User=1500
 AutoUpdate=registry
 Environment=POSTGRES_USER=postgres
 Environment=POSTGRES_DB=immich
