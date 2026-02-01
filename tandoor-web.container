@@ -4,8 +4,10 @@ Description=Tandoor Web container
 [Container]
 Pod=tandoor.pod
 ContainerName=tandoor-web
-Image=docker.io/vabene1111/recipes
+Image=docker.io/vabene1111/recipes:2.3.1
 UserNS=keep-id:uid=1500,gid=1500
+User=0
+AddCapability=CAP_NET_BIND_SERVICE
 AutoUpdate=registry
 Environment=GUNICORN_MEDIA=1
 Environment=DB_ENGINE=django.db.backends.postgresql
@@ -13,6 +15,7 @@ Environment=POSTGRES_HOST=tandoor-db
 Environment=POSTGRES_PORT=5432
 Environment=POSTGRES_DB=tandoor
 Environment=POSTGRES_USER=tandoor
+Environment=TANDOOR_PORT=8111
 Secret=tandoor-db-password,type=env,target=POSTGRES_PASSWORD
 Secret=tandoor-secret-key,type=env,target=SECRET_KEY
 Volume=%h/volumes/tandoor_staticfiles:/opt/recipes/staticfiles
