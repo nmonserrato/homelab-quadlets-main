@@ -1,0 +1,18 @@
+[Unit]
+Description=HomeAssistant container
+Requires=dbus-auth-proxy.container
+After=dbus-auth-proxy.container
+
+[Container]
+ContainerName=homeassistant
+Image=ghcr.io/home-assistant/home-assistant:stable
+AutoUpdate=registry
+PublishPort=8123:8123
+Volume=%h/volumes/homeassistant_config:/config
+Volume=dbus-socket:/run/dbus:ro
+PodmanArgs=--privileged
+
+[Install]
+WantedBy=default.target
+
+
